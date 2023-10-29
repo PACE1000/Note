@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".HomeFragment"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_home"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_user_log"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_r"
+                android:layout_gravity="left"
+                android:text="Welcome, Username!"
+                android:id="@+id/tv_username"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_r"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Logout"
+                android:layout_gravity="right"
+                android:layout_weight="0"
+                android:id="@+id/tv_logout"/>
+        </LinearLayout>
+
+        <TextView
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/tv_home"
+            android:textSize="20dp"
+            android:fontFamily="@font/poppins_r"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Kosong"
+            android:id="@+id/tv_datakosong"
+            android:visibility="gone"
+            android:fontFamily="@font/poppins_r"
+            android:textSize="20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_note"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="right"
+            android:background="@drawable/circle_tambah"
+            android:text="+"
+            android:textSize="20dp"
+            android:id="@+id/btn_tambah_home"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>
