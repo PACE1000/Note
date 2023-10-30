@@ -20,4 +20,8 @@ class NoteViewModel(private val repository: NoteRepository):ViewModel() {
     fun delete(note:Note) = viewModelScope.launch {
         repository.delete(note)
     }
+
+    fun checkWorking() {
+        repository.checkWorking()
+    }
 }

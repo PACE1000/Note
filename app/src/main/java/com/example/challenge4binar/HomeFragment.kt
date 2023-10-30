@@ -31,10 +31,14 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var sharedPreferences: SharedPreferences
 
-    private val noteViewModel: NoteViewModel by viewModels()
+    val database = AppDatabase.getDatabase(requireContext())
+    val noteDao = database!!.noteDao()
+
+    private val noteViewModel by viewModels<NoteViewModel> { NoteViewModelFactory(NoteRepository(noteDao = noteDao )) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        noteViewModel.checkWorking()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -95,6 +99,7 @@ class HomeFragment : Fragment() {
         binding.btnTambahHome.setOnClickListener{
             dialogtambah()
         }
+
     }
 
     fun dialogtambah() {

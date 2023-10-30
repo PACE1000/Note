@@ -1,5 +1,6 @@
 package com.example.challenge4binar
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 
 class NoteRepository(private val noteDao: NoteDao) {
@@ -16,5 +17,9 @@ class NoteRepository(private val noteDao: NoteDao) {
 
     suspend fun delete (note:Note){
         noteDao.delete(note)
+    }
+
+    fun checkWorking(){
+        Log.d("NoteViewModel_Check", "checkWorking: ")
     }
 }
